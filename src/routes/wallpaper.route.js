@@ -26,7 +26,7 @@ router.route("/uploadWallpapers").post(
 router.get("/getallWallpapers", getAllWallpapers);
 router.get("/getSinglewallpapers/:id", getSingleWallpaper);
 router.get("/getUserSingleWallpaper/:wallpaperId", verifyJwt, getSingleUserWallpaper);
-router.route("/getUserWallpaper").get( getUserWallpaper); // remover verifyJwt
+router.route("/getUserWallpaper").get(verifyJwt, getUserWallpaper);
 router.route("/editUserWallpaper/:wallpaperId").put(verifyJwt, editWallpaper);
 router.route("/deleteWallpaper/:wallpaperId").delete(verifyJwt, deleteWallpaper);
 router.route("/wallpapers/:wallpaperId/view").get(verifyJwt, viewWallpaper);
